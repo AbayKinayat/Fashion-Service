@@ -1,0 +1,281 @@
+.header {
+    position: relative;
+    z-index: 10;
+    max-width: 1920px;
+    min-height: 1080px;
+    color: $white;
+    overflow: hidden;
+
+    background-image: url(../images/header/main-background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    margin: 0 auto;
+}
+
+.header__header {
+    position: relative;
+    z-index: 10;
+    min-height: 155px;
+    transition: .5s;
+
+    &:hover {
+        background-color: $header__header-bg-color;
+    }
+}
+
+.header__info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    font-size: 18px;
+
+    padding: 24px 43px 0 43px;
+
+    .track-box, .phone-box {
+        display: flex;
+        align-items: center;
+    }
+}
+
+    /* HEADER HEADER */
+
+.burger-nav {
+    display: none;
+    justify-content: space-between;
+    flex-direction: column;
+    width: 24px;
+    height: 12px;
+    cursor: pointer;
+
+    margin-top: 3px;
+
+    div {
+     width: 24px;
+     height: 2px;
+     
+     background-color: $white;
+    }
+}
+
+.nav-side {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 50;
+    width: 300px;
+    height: 100vh;
+    background-color: $white;
+    transform: translateX(-100%);
+    transition: .5s;
+
+    padding: 25px 16px;
+
+    .social-box {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        font-size: 16px;
+        height: 10%;
+        a {
+            color: #88929C;
+            text-decoration: none;
+
+            margin: 0;
+
+            &:last-of-type {
+                margin: 0;
+            }
+        }
+    }
+}
+
+.nav-side__close {
+    position: relative;
+    width: 24px;
+    height: 24px;
+
+    div {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 24px;
+        height: 2px;
+
+        background-color: #000;
+
+        &:first-of-type {
+            transform: rotate(45deg);
+        }
+
+        &:last-of-type {
+            transform: rotate(-45deg);
+        }
+    }
+}
+
+.nav-side__links {
+    margin-top: 48px;
+}
+
+.nav-side__link {
+    line-height: 200%;
+
+    margin-bottom: 12px;
+
+    &:hover {
+        filter: brightness(1.1);
+    }
+
+    &:last-of-type {
+        margin-bottom: 0;
+    }
+
+    a {
+        text-decoration: none;
+        color: #000;
+    }
+}
+
+.logo {
+    font-family: 'Cinzel', serif;
+    font-weight: 900;
+    font-size: 36px;
+    text-transform: uppercase;
+
+    span {
+        font-weight: 700;
+    }
+}
+
+.logo_short {
+    display: none;
+}
+
+.track-box {
+    img {
+        margin-right: 15px;
+    }
+}
+
+.phone-box {
+    span {
+        &:first-of-type {
+            margin-right: 32px;
+        }
+
+        &:last-of-type {
+            margin-right: 15px;
+        }
+    }
+}
+
+.lang {
+    display: none;
+}
+
+.lang2 {
+    display: none;
+}
+
+.header__nav {
+    display: flex;
+    justify-content: center;
+
+    margin-top: 24px;
+}
+
+.header__nav-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.header__nav-link {
+    margin: 0 20px;
+    margin-bottom: 16px;
+
+    &:hover {
+        filter: brightness(0.7);
+    }
+
+    a {
+        color: $white;
+        text-decoration: none;
+    }
+}
+
+.header__inner {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    max-width: 1600px;
+
+    margin: 0 auto;
+    margin-top: 356px;
+}
+
+.header__title {
+    max-width: 1100px;
+    font-size: calc(30px + (50 * 0.84) * (100vw / 1600));
+    line-height: 132%;
+
+    margin-bottom: 20px;
+}
+
+@media (max-width: 767px) {
+    .header__title {
+        font-size: calc(30px + (50 + 50 * 0.7) * ((100vw - 320px) / 1600));
+    }
+}
+
+.header__btn {
+    @include btn($box-shadow: 12px 12px 33px rgba(204, 254, 98, 0.4))
+}
+
+.star_anim {
+    position: absolute;
+    z-index: 5;
+    top: 434px;
+    left: 77px;
+    animation-name: star;
+    animation-duration: 60s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+.star_anim2 {
+    position: absolute;
+    top: -150px;
+    left: -250px;
+    z-index: 5;
+    width: 737px;
+    animation-name: star;
+    animation-duration: 60s;
+    animation-iteration-count: infinite;
+}
+
+.star_anim3 {
+    position: absolute;
+    z-index: 5;
+    bottom: 0;
+    right: -250px;
+    width: 513px;
+    animation-name: star;
+    animation-duration: 60 s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes star {
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}

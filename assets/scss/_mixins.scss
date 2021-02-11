@@ -1,0 +1,23 @@
+@mixin btn($p: 17px 32px, $bgcolor: $secondary-color, $black: #000, $border-radius: 30px, $box-shadow: none) {
+    color: $black;
+    font-size: 20px;
+    font-weight: 500;
+    cursor: pointer;
+
+    background-color: $bgcolor;
+    box-shadow: $box-shadow;
+
+    border-radius: $border-radius;
+    padding: $p;
+
+    &:hover {
+        filter: brightness(1.1);
+    }
+
+    &:focus {
+        outline: none;
+        background-color: #CCFE62;
+    }
+
+    @content 
+} 

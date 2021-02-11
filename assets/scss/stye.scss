@@ -1,0 +1,109 @@
+@import "vars";
+@import "mixins";
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+ul {
+    list-style: none;
+}
+
+.section__title {
+    font-size: calc(25px + (35 * 0.85) * (100vw / 1600));
+    font-weight: 600;
+    line-height: 132%;
+}
+
+.section__h3 {
+    font-weight: 600;
+    font-size: calc(25px + (15 * 0.85) * (100vw / 1600));
+}
+
+.section__h4 {
+    font-weight: 600;
+    font-size: 24px;
+}
+
+.header, .partner-list, .cooperation-scheme {
+    padding: 0 24px;
+}
+
+@media (max-width: 767px) {
+    .section__title {
+        font-size: calc(25px + (35 + 35 * 0.7 ) * ((100vw - 320px) / 1600));
+    }
+
+    .section__h3 {
+        font-size: calc(25px + (15 + 15 * 0.7) * ((100vw - 320px)  / 1600));
+    }
+}
+
+.phone-btn {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    z-index: 9;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateX(50px);
+    justify-content: center;
+    align-items: center;
+    transition: .5s;
+    display: flex;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    cursor: pointer;
+    user-select: none;
+
+    background-color: $secondary-color;
+
+    animation-name: phone-btn;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease;
+    animation-direction: alternate;
+    animation-play-state: running;
+}
+
+
+@keyframes phone-btn {
+    0% {
+        box-shadow: 0 0 0 0 #aad351;
+    }
+    100% {
+        box-shadow: 0 0 0 10px rgba(170, 211, 81, 0.0);
+    }
+}
+
+.phone-btn:hover{
+    animation-play-state: paused;
+}
+
+
+@import 'header';
+@import 'section-services';
+@import 'additional-help';
+@import 'partner-list';
+@import 'cooperation-scheme';
+@import 'process';
+@import 'about-company';
+@import 'question-answer';
+@import 'call-action';
+@import 'footer';
+@import 'popup';
+@import 'media';

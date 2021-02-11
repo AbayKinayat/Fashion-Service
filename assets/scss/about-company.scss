@@ -1,0 +1,36 @@
+.about-company {
+  position: relative;
+  max-width: 1920px;
+  overflow: hidden;
+  margin: 0 auto;
+  padding: 100px 24px;
+}
+
+.about-company__inner {
+  position: relative;
+  z-index: 8;
+  max-width: 1600px;
+
+  margin: 0 auto;
+}
+
+.about-company__title {
+  span {
+    background-color: $secondary-color;
+    border-radius: 40px;
+    padding: 0 20px;
+  }
+}
+
+.about-company__subtitle {
+  max-width: 1048px;
+  font-size: calc(18px + (2 * 0.85) * (100vw / 1600));
+
+  margin-top: 48px;
+}
+
+@media (max-width: 767px) {
+  .about-company__subtitle {
+    font-size: calc(18px + (2 + 2 * 0.7) * ((100vw - 320px) / 1600));
+  }
+}
